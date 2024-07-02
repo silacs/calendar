@@ -1,0 +1,24 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    margin: 130px;
+    >h1 {
+        margin-bottom: 10px;
+    }
+    form {
+        width: 40%;
+        display: flex;
+        align-items: stretch;
+        flex-direction: column;
+        .startpicker, .endpicker {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}
+// .touched .invalid {
+//     border: solid 1px red;
+// }
+// .touched .valid {
+//     border: solid 1px green !important;
+// }

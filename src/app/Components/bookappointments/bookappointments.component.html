@@ -1,0 +1,40 @@
+<h1>{{dateService.daysofweek[date.getDay()]}}, {{dateService.months[month]}} {{day}}, {{year}}</h1>
+<form #bookform="ngForm" [formGroup]="form" (ngSubmit)="submit()">
+    <mat-form-field>
+        <mat-label>Title</mat-label>
+        <input matInput type="text" formControlName="title">
+    </mat-form-field>
+    <div class="startpicker">
+        <mat-form-field>
+            <mat-label>Choose a Start Date</mat-label>
+            <input matInput [matDatepicker]="start" formControlName="startDate">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="start"></mat-datepicker-toggle>
+            <mat-datepicker #start></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Enter a time</mat-label>
+            <input matInput type="text" formControlName="startTime" (change)="zeroPad('start')">
+            <mat-hint>24 Hour Time</mat-hint>
+        </mat-form-field>
+    </div>
+    <div class="endpicker">
+        <mat-form-field>
+            <mat-label>Choose a End Date</mat-label>
+            <input matInput [matDatepicker]="end" formControlName="endDate">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="end"></mat-datepicker-toggle>
+            <mat-datepicker #end></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Enter a time</mat-label>
+            <input matInput type="text" formControlName="endTime" (change)="zeroPad('end')">
+            <mat-hint>24 Hour Time</mat-hint>
+        </mat-form-field>
+    </div>
+    <mat-form-field>
+        <mat-label>Description</mat-label>
+        <input matInput type="text" name="desc" formControlName="description">
+    </mat-form-field>
+    <button type="submit" mat-fab extended [disabled]="bookform.invalid">Save Appointment</button>
+</form>

@@ -1,0 +1,14 @@
+<mat-accordion>
+    <mat-expansion-panel *ngFor="let app of matchingappointments">
+        <mat-expansion-panel-header>
+            <mat-panel-title>Title: {{app.title}}</mat-panel-title>
+            <mat-panel-description>Description: {{app.description || "No description"}}</mat-panel-description>
+        </mat-expansion-panel-header>
+        <div class="content">
+            <p>Starts on {{getDateString(app.startDate)}} at {{app.startTime}}</p>
+            <p>Ends on {{getDateString(app.endDate)}} at {{app.endTime}}</p>
+            <p style="word-wrap: break-word;">Description: {{app.description || "No Description."}}</p>
+        </div>
+        <button mat-flat-button color="accent" routerLink="/Appointments/Edit/{{app.uuid}}">Edit Appointment</button>
+    </mat-expansion-panel>
+</mat-accordion>

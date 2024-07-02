@@ -1,0 +1,22 @@
+:host {
+    width: 40%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    @media screen and (max-width: 1100px) {
+        width: 60%;
+    }
+    mat-grid-tile {
+        background-color: lightskyblue;
+        transition: 0.2s;
+        border-radius: 5px;
+    }
+    .calendar {
+        mat-grid-tile {
+            cursor: pointer;
+            &:hover {
+                background-color: rgb(111, 171, 207);
+            }
+        }
+    }
+}

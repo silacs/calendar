@@ -1,0 +1,11 @@
+<a routerLink=""><mat-icon>calendar_month</mat-icon>Calendar</a>
+<nav>
+    <ul>
+        <li><a routerLink="Appointments">Appointments & Events</a></li>
+    </ul>
+    <div class="monthSelector">
+        <mat-icon (click)="changeMonth('back')">arrow_back_ios</mat-icon>
+        {{DateService.daysofweek[date.getDay()]}}, {{DateService.months[date.getMonth()]}} {{date.getDate()}}, {{date.getFullYear()}}
+        <mat-icon (click)="changeMonth('forw')">arrow_forward_ios</mat-icon>
+    </div>
+</nav>

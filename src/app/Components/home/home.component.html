@@ -1,0 +1,17 @@
+<mat-grid-list cols="7" rowHeight="1.5:1" gutterSize="10" style="margin-bottom: 10px;">
+    <mat-grid-tile>Mon</mat-grid-tile>
+    <mat-grid-tile>Tue</mat-grid-tile>
+    <mat-grid-tile>Wed</mat-grid-tile>
+    <mat-grid-tile>Thu</mat-grid-tile>
+    <mat-grid-tile>Fri</mat-grid-tile>
+    <mat-grid-tile>Sat</mat-grid-tile>
+    <mat-grid-tile>Sun</mat-grid-tile>
+</mat-grid-list>
+<mat-grid-list cols="7" gutterSize="10" class="calendar">
+    <mat-grid-tile 
+    *ngFor="let day of days" 
+    routerLink="Appointments/Book/{{day.getFullYear()}}-{{day.getMonth()+1}}-{{day.getDate()}}"
+    (click)="dateService.changeDate(day)">
+        {{day.getDate()}}
+    </mat-grid-tile>
+</mat-grid-list>
